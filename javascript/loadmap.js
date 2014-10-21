@@ -4,6 +4,9 @@ var pos;
 var directionsDisplay;
 var directionsService;
 var map;
+var marcadoresGuardados;
+
+var latitudGlobal, longitudGlobal;
 
 $( document ).ready(function() {
 	load();
@@ -46,7 +49,7 @@ $( document ).ready(function() {
 	  downloadUrl("XMLgen.php", function(data) {
 		var xml = data;
         var markers = xml.documentElement.getElementsByTagName("marker");
-		
+		marcadoresGuardados = new Array();
 		for (var i = 0; i < markers.length; i++) {
           var name = markers[i].getAttribute("name");
           var type = markers[i].getAttribute("type");
@@ -56,6 +59,7 @@ $( document ).ready(function() {
           var icon = customIcons[type] || {};
           
 		  var marker = new google.maps.Marker({ map: map, position: point, icon: customIcons});
+		  marcadoresGuardados[i] = marker;
           bindInfoWindow(marker, map, infoWindow, html);
         } //fin del for      
 	  }); //FIN:downloadUrl
@@ -88,6 +92,8 @@ $( document ).ready(function() {
         infoWindow.open(map, marker);
 		trazarRuta(marker.getPosition());
 		marcadoresColocados();
+		latitudGlobal = marker.position.lat();
+		longitudGlobal = marker.position.lng();
       });
     }
 

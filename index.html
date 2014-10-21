@@ -20,20 +20,14 @@
 
 
 	<script type="text/javascript">
-
-
 		function navigateTo(){
-		       
-		       alert("go");
-		       navigator.google_navigate.navigate("10.499461, -66.785309", function() {
+		       navigator.google_navigate.navigate(latitudGlobal+", "+longitudGlobal, function() {
 				    alert('Success');
 				}, function(errMsg) {
 				    alert("Failed: " + errMsg);
 				});
 		    
     	}
-
-
 	</script>
 
 </head> 

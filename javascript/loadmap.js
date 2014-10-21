@@ -16,7 +16,7 @@ $( document ).ready(function() {
     function load() {
 		if (navigator.geolocation){              
         		   //enableHighAccuracy:true indica que si la red no esta disponible le pregunta al GPS.
-                  navigator.geolocation.getCurrentPosition(onSuccess, onError, {maximumAge: 1, timeout: 50000, enableHighAccuracy:true});
+                  navigator.geolocation.getCurrentPosition(onSuccess, onError, {maximumAge: 0, timeout: 50000, enableHighAccuracy:true});
                                              
                 }
                 else{

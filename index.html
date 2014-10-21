@@ -15,31 +15,25 @@
 	<script type="text/javascript" charset="utf-8" src="javascript/visualEffects.js"></script>
 	<script type="text/javascript" charset="utf-8" src="javascript/search.js"></script>
 	<script type="text/javascript" charset="utf-8" src="javascript/cordova.js"></script>
-	<script type="text/javascript" charset="utf-8" src="javascript/phonenavigator.js"></script>
-	<!--<script type="text/javascript" charset="utf-8" src="javascript/navigaton.js"></script>-->
+	<script type="text/javascript" charset="utf-8" src="javascript/googlenavigate.js"></script>
+
 
 
 	<script type="text/javascript">
 
 
-		function navigateTo(lat, lon, successFn, errorFn){
+		function navigateTo(){
 
 				alert("entro a la funcion");
-		        cordova.require('javascript/phonenavigator').doNavigate(lat, lon, successFn, errorFn);
+		       
+		       navigator.google_navigate.navigate(10.499461, -66.785309, function() {
+				    console.log('Success');
+				}, function(errMsg) {
+				    console.log("Failed: " + errMsg);
+				});
 		    
     	}
 
-
-    	function init() {
-    		alert("entro init");
-
-			$("#navigarMaps").click(function(){
-				navigateTo(10.499461, -66.785309, function(){ alert("Successfully opened navigator");}, function(errMsg){alert("Error opening navigator: "+errMsg);
-			});
-
-		}
-
-		$(document).on("deviceready", init);
 
 	</script>
 
@@ -71,7 +65,7 @@
 
 		<div data-role="navbar">
 		<ul>
-			<li><a href="#" id="navegarMaps" data-icon="star" data-iconpos="top">Navegar</a></li>
+			<li><a href="#" id="navegarMaps" data-icon="star" data-iconpos="top" onclick=(navigateTo())>Navegar</a></li>
 			<li><a href="#search" id="searchplace" data-icon="search" data-iconpos="top" onclick=(clean())>Buscar</a></li>
 			
 		</ul>

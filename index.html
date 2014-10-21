@@ -32,10 +32,14 @@
 
     	function init() {
     		alert("entro init");
-			
-		navigateTo(10.499461, -66.785309, function(){ alert("Successfully opened navigator");}, function(errMsg){alert("Error opening navigator: "+errMsg);
+
+			$("#navigarMaps").click(function(){
+				navigateTo(10.499461, -66.785309, function(){ alert("Successfully opened navigator");}, function(errMsg){alert("Error opening navigator: "+errMsg);
+			});
 
 		}
+
+		$(document).on("deviceready", init);
 
 	</script>
 
@@ -67,7 +71,7 @@
 
 		<div data-role="navbar">
 		<ul>
-			<li><a href="#" data-icon="star" data-iconpos="top"  onclick="init()">Navegar</a></li>
+			<li><a href="#" id="navegarMaps" data-icon="star" data-iconpos="top">Navegar</a></li>
 			<li><a href="#search" id="searchplace" data-icon="search" data-iconpos="top" onclick=(clean())>Buscar</a></li>
 			
 		</ul>

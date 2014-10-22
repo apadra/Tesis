@@ -27,6 +27,15 @@ a.bus{
 
 }
 
+
+div#navigate{
+
+overflow:scroll;
+padding: 0px !important;
+margin: 0px !important;
+
+}
+
 a.bus:hover {
     background-color:grey;
     text-decoration: none;

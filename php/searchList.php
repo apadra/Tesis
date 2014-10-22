@@ -1,7 +1,6 @@
 <?php
 require("dbinfo.php");
 header('Access-Control-Allow-Origin: *');
-header('Content-type: text/plain; charset=utf-8');
 
 $search = $_POST['estado'];
 
@@ -25,20 +24,16 @@ if (!$db_selected) {
 }
 
 
-$query = "SELECT Nombre FROM sitios WHERE Nombre LIKE '%$search%' UNION SELECT name FROM markers WHERE name LIKE '%$search%' ";
+$query = "SELECT a.Nombre, b.lat, b.lng from sitios a inner join markers b on a.ID_Markers = b.ID WHERE a.Nombre like '%$search%' UNION SELECT a.name as Nombre, a.lat, a.lng from markers a where a.name like '%$search%'";
 $result = mysql_query($query);
 if (!$result) {
   die('Invalid query: ' . mysql_error());
 }
-
-
-
-while($row= mysql_fetch_array($result)){
-
-     echo '<div class="busdiv"><a href="#" class="bus">'. utf8_encode($row['Nombre']). "</a></div>";
-    echo '<div class="busdiv"><a href="#" class="bus">'. utf8_encode($row['name']). "</a></div>";
-     
-}
+   while($row= mysql_fetch_array($result)){
+      echo '<li data-lat="'. utf8_encode($row['lat']). '" data-lng="'. utf8_encode($row['lng']). '" onclick="buscarYAbrirPin(this);"><a href="#">'. utf8_encode($row['Nombre']). "</a></li>";
+    }
 
 }
 ?>	
+
+

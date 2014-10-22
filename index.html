@@ -1,7 +1,7 @@
 <!DOCTYPE html> 
 <html> 
 <head> 
-	<title>My Page</title> 
+	<title>GPS Universidad Metropolitana</title> 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
 	<link rel="stylesheet" href="css/estilos.css" type="text/css" />
@@ -16,9 +16,6 @@
 	<script type="text/javascript" charset="utf-8" src="javascript/search.js"></script>
 	<script type="text/javascript" src="cordova.js"></script>
 	<script type="text/javascript" charset="utf-8" src="javascript/googlenavigate.js"></script>
-
-
-
 	<script type="text/javascript">
 		function navigateTo(){
 		       navigator.google_navigate.navigate(latitudGlobal+", "+longitudGlobal, function() {
@@ -39,10 +36,13 @@
 
 <!--Header: incluye la barra principal del sistema en la parte superior-->
 	<div data-role="header">
-
-		<a  href="#myPanel" data-role="button" data-icon="home" data-theme="b"  data-corners="true">Menu</a>
+		
+		<!-- botones del menú principal-->
+		<a  href="#myPanel" data-role="button" data-icon="home" data-theme="b"  data-corners="true">Menú</a>
 		<h1>UNIMET</h1>
 		<a  href="#" data-role="button" data-icon="refresh" data-theme="b"  onclick="load()">yo!</a>
+		<!--/botones del menu principal-->
+
 	</div><!-- /header -->
 
 <!-- Content: incluye la creación del mapa-->

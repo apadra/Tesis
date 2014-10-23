@@ -16,11 +16,14 @@ $('#listResult').listview('refresh');
 } //FIN: function estado
 
 
-function buscarYAbrirPin(etiqueta){
+function buscarYAbrirPin(etiqueta){  
+	
+	$( "#search" ).panel( "close" );   
 	var lat = $(etiqueta).attr("data-lat");
 	var lng = $(etiqueta).attr("data-lng");
 	var pin = buscarPin(lat, lng);
 	google.maps.event.trigger(pin, 'click');
+	
 }
 
 function buscarPin(lat, lng){

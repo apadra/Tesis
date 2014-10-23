@@ -19,9 +19,9 @@
 	<script type="text/javascript">
 		function navigateTo(){
 		       navigator.google_navigate.navigate(latitudGlobal+", "+longitudGlobal, function() {
-				    alert('Success');
+				    console.log('Success');
 				}, function(errMsg) {
-				    alert("Failed: " + errMsg);
+				    console.log("Failed: " + errMsg);
 				});
 		    
     	}

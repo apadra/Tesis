@@ -9,6 +9,8 @@ var marcadoresGuardados;
 var latitudGlobal, longitudGlobal;
 
 $( document ).ready(function() {
+
+	$("#navegarMaps").prop("disabled",true);
 	load();
 
 

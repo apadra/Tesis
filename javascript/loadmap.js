@@ -12,6 +12,7 @@ $( document ).ready(function() {
 
 	$("#navegarMaps").prop("disabled",true);
 	load();
+	$("#navegarMaps").hide();
 
 
 });
@@ -128,10 +129,11 @@ $( document ).ready(function() {
 	  zoom:17;
 	}
 	});
-		
+	 $("#navegarMaps").show();
+
 	} //FIN: Function trazarRuta()
 
 
-
+	
 
 

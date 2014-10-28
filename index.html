@@ -5,10 +5,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
 	<link rel="stylesheet" href="css/estilos.css" type="text/css" />
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css" />
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.css" />
 	<link rel="stylesheet" href="css/estilos.css" type="text/css" />
 	<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
-	<script src="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=True"></script>
 	<script type="text/javascript" charset="utf-8" src="javascript/loadmap.js"> </script>
 	<script type="text/javascript" charset="utf-8" src="javascript/loadsites.js"></script>
@@ -40,15 +40,20 @@
 		<!-- botones del menú principal-->
 		<a  href="#myPanel" data-role="button" data-icon="home" data-theme="b"  data-corners="true">Menú</a>
 		<h1>UNIMET</h1>
-		<a  href="#" data-role="button" data-icon="refresh" data-theme="b"  onclick="load()">yo!</a>
+		<a  href="#myPopup" id="yo" data-role="button" data-icon="refresh" data-theme="b"  >yo!</a>
 		<!--/botones del menu principal-->
+
+		<div data-role="popup" id="myPopup" class="ui-content">
+      	<h3>Actualizando Ubicación</h3>
+      	<p>presionar la pantalla para cerrar.</p>
+    	</div>
 
 	</div><!-- /header -->
 
 <!-- Content: incluye la creación del mapa-->
 	<div data-role="content" id="content">
 
-		<div id="map" style="height:100%">
+		<div id="map" style="height:100%; margin-top:4px;">
 		</div><!-- /map-->
 
 	</div><!-- /content -->
@@ -56,9 +61,9 @@
 <!-- Footer: incluye el botón de navegación-->	
 	<div  data-role="footer" data-position="fixed" >
 
-		<div data-role="navbar">
+		<div data-role="navbar" >
 		<ul>
-			<li><a href="#" id="navegarMaps" data-icon="navigation" data-iconpos="top" onclick=(navigateTo())>Navegar</a></li>
+			<li><a  id="navegarMaps" data-icon="navigation" data-iconpos="top" onclick=(navigateTo())>Navegar</a></li>
 			<li><a href="#search" id="searchplace" data-icon="search" data-iconpos="top" onclick=(clean())>Buscar</a></li>
 			
 		</ul>
@@ -67,7 +72,7 @@
     </div><!-- /footer -->
 
 <!-- Panel Navigate: incluye el contenido de los marcadores-->
-	<div data-role="panel" id="navigate" data-theme="a"  data-inset="false" data-display="reveal">
+	<div data-role="panel" id="navigate" data-theme="a"  data-inset="false" data-display="reveal" data-position="right">
 
 	</div><!-- /navigatepanel -->
 

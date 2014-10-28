@@ -27,13 +27,18 @@ a.bus{
 
 }
 
-
 div#navigate{
 
 overflow:scroll;
 padding: 0px !important;
 margin: 0px !important;
 
+}
+
+div#infoList{
+
+	width: 102% !important;
+	padding-left: 10px;
 }
 
 a.bus:hover {

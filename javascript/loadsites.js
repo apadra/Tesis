@@ -4,6 +4,8 @@ $('.unimet').unbind("click");
 
     $('.unimet').click(
 
+      
+
     function(){
    console.log("el id del boton: " +$(this).attr("data-idboton"));
 
@@ -25,7 +27,7 @@ $('.unimet').unbind("click");
               var punto = sitios[i].getAttribute("Referencia");
               var tlf = sitios[i].getAttribute("Telefono");
 
-          $("#navigate").append('<div data-role="collapsible" data-theme="b" data-content-theme="c"><h3> '+ nombre +'</h3><ul data-role="listview" id="infomark"><li> Tipo: '+ tipo +'</li><li> Nivel: '+ piso+' </li><li> Teléfono(s): '+ tlf +'</li> <li> Referencia: '+ punto +' </li></ul></div>');
+          $("#navigate").append('<div data-role="collapsible" data-theme="b" data-content-theme="c" id="infoList"><h3> '+ nombre +'</h3><ul data-role="listview" id="infomark"><li> Tipo: '+ tipo +'</li><li> Nivel: '+ piso+' </li><li> Teléfono(s): '+ tlf +'</li> <li> Referencia: '+ punto +' </li></ul></div>');
 
         }
          
@@ -33,7 +35,8 @@ $('.unimet').unbind("click");
         } //FIN: estructura FOR 
 
          $("#navigate").collapsibleset();
-         $("#navigate").listview("refresh");
+         $("#navigate").panel("refresh");
+
  
     }); //FIN: sitesload
 

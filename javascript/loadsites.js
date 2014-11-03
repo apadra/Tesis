@@ -43,7 +43,7 @@ $('.unimet').unbind("click");
 
 
 function sitesload(url, callback) {
-    var urlfinal = "http://gpsunimet.webuda.com/"+url;
+    var urlfinal = "http://unimetgps.hostei.com/"+url;
     $.ajax({
       url: urlfinal,
       method: "GET",

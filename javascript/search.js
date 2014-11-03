@@ -4,7 +4,7 @@
 function estado(value){
 
 
-$.post("http://gpsunimet.webuda.com/searchList.php", {estado:value}, function(data){
+$.post("http://unimetgps.hostei.com/searchList.php", {estado:value}, function(data){
 
 $("#listResult").html(data);
 $('#listResult').listview('refresh');

@@ -68,7 +68,7 @@ $( document ).ready(function() {
 	  }); //FIN:downloadUrl
 	
 	  pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-	  alert("metros:"+position.coords.accuracy);
+	  //alert("metros:"+position.coords.accuracy);
 	  
       var marker = new google.maps.Marker({
         map: map,
@@ -101,7 +101,7 @@ $( document ).ready(function() {
     }
 
     function downloadUrl(url, callback) {
-		var urlfinal = "http://gpsunimet.webuda.com/"+url;
+		var urlfinal = "http://unimetgps.hostei.com/"+url;
 		$.ajax({
 			url: urlfinal,
 			method: "GET",
@@ -134,6 +134,11 @@ $( document ).ready(function() {
 	} //FIN: Function trazarRuta()
 
 
-	
+	function yo(){
+
+		alert("Actualizando Ubicación...");
+		load();
+
+	}
 
 

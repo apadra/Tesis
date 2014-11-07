@@ -138,6 +138,7 @@ $( document ).ready(function() {
 
 		alert("Actualizando Ubicación...");
 		load();
+		$("#navegarMaps").hide();
 
 	}
 
